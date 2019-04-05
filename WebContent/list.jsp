@@ -2,14 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.javaex.dao.EmailBookDao"%>
 <%@ page import="com.javaex.vo.EmailBookVo"%>
-<%@ page import="java.util.List" %>
+<%@ page import="java.util.List"%>
 
 <%
 	EmailBookDao dao = new EmailBookDao();
 	List<EmailBookVo> list = dao.getList();
-%>	
-	
-	
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,29 +19,29 @@
 <body>
 	<h1>메일 리스트</h1>
 	<p>입력한 정보 내역입니다.</p>
-	
+
 	<%
-		for(EmailBookVo vo : list){
+		for (EmailBookVo vo : list) {
 	%>
-			<table border="1" width="300">
-				<tr>
-					<td>Last name:</td>
-					<td><%=vo.getLastName() %></td>
-				</tr>
-				<tr>
-					<td>First name:</td>
-					<td><%=vo.getFirstName() %></td>
-				</tr>
-				<tr>
-					<td>email</td>
-					<td><%=vo.getEmail() %></td>
-				</tr>
-			</table>
-			<br>
+	<table border="1" width="300">
+		<tr>
+			<td>Last name:</td>
+			<td><%=vo.getLastName()%></td>
+		</tr>
+		<tr>
+			<td>First name:</td>
+			<td><%=vo.getFirstName()%></td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td><%=vo.getEmail()%></td>
+		</tr>
+	</table>
+	<br>
 	<%
 		}
 	%>
-	
+
 	<a href="">추가메일 등록</a>
 </body>
 </html>
